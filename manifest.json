@@ -1,0 +1,19 @@
+{
+    "name": "Canvas Next",
+    "description": "Automatically Next the Modules",
+    "version": "1.0",
+    "manifest_version": 3,
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": "icon.png"
+    },
+    "content_scripts": [
+        {
+            "js": ["scripts/content.js"],
+            "matches": [
+                "https://feu.instructure.com/courses/*"
+            ],
+            "run_at": "document_end"
+        }
+    ]
+}
