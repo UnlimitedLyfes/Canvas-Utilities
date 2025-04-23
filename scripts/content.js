@@ -16,25 +16,37 @@ const waitForNext = (selector, callback) => {
 }
 
 
+
 waitForNext(".module-sequence-footer-right", (target) => {
     const nextDiv = target
     console.log("Found nextDiv")
 
-    //const nextButton = nextDiv.querySelector(".css-iclrqq-view--inlineBlock-baseButton")
+    const nextButton = nextDiv.querySelector(".css-iclrqq-view--inlineBlock-baseButton")
 
 
-    const newElement =  document.createElement("span")
-    newElement.style.background = `url(${chrome.runtime.getURL("icon.png")}) no-repeat`;
-    newElement.style.backgroundSize = "contain"
-    newElement.style.display = "inline-block"
-    newElement.style.width = "100px"; // or whatever size your icon is
-    newElement.style.height = "100px";
-    nextDiv.appendChild(newElement)
+    chrome.storage.local.get({skipState: "false"}, (result) => {
+        if(result.skipState == "true"){
+            nextButton.click()
+        }
+    })
 
-    console.log("Inserted")
+    
 
-   
+
+    nextDiv.appendChild(createSkipElement())
+
 })
 
-
+function createSkipElement(){
+    const newElement = document.createElement("input")
+    newElement.type = "image";
+    newElement.src = `${chrome.runtime.getURL('icon.png')}`
+    newElement.style.height = "26px"
+    newElement.style.padding = "7px 5px 0 0"
+        newElement.addEventListener("click", () => {
+        chrome.storage.local.set({ skipState: "true" })
+        console.log(`clicked`)
+    })
+    return newElement
+}
 

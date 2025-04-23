@@ -3,6 +3,7 @@
     "description": "Automatically Next the Modules",
     "version": "1.0",
     "manifest_version": 3,
+    "permissions": ["storage"],
     "action": {
       "default_popup": "popup.html",
       "default_icon": "icon.png"
@@ -14,6 +15,13 @@
                 "https://feu.instructure.com/courses/*"
             ],
             "run_at": "document_end"
+        }
+    ],
+    
+    "web_accessible_resources": [
+        {
+            "resources": ["icon.png"],
+            "matches": ["<all_urls>"]
         }
     ]
 }
