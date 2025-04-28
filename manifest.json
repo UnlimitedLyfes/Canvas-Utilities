@@ -10,11 +10,17 @@
     },
     "content_scripts": [
         {
-            "js": ["scripts/content.js"],
+            "js": ["scripts/next.js"],
             "matches": [
-                "https://feu.instructure.com/*"
+                "https://feu.instructure.com/courses/*"
+            ]
+        },
+        {
+            "js": ["scripts/skiptomodule.js"],
+            "matches": [
+                "https://feu.instructure.com/courses/*"
             ],
-            "run_at": "document_end"
+            "run_at": "document_start"
         }
     ],
     
