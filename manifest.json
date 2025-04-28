@@ -12,7 +12,7 @@
         {
             "js": ["scripts/content.js"],
             "matches": [
-                "https://feu.instructure.com/courses/*"
+                "https://feu.instructure.com/*"
             ],
             "run_at": "document_end"
         }

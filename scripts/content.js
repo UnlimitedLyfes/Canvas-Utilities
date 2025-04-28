@@ -8,7 +8,7 @@ waitForNext(".module-sequence-footer-right", (target) => {
 
     checkIfNextShouldStop()
 
-    const nextButton = nextDiv.querySelector(".css-iclrqq-view--inlineBlock-baseButton")
+    const nextButton = nextDiv.querySelector("a")
 
 
     chrome.storage.local.get({skipState: "false"}, (result) => {
