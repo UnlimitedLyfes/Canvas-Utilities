@@ -1,4 +1,4 @@
-console.log("autonext content.js working")
+console.log("next.js working")
 
 
 
