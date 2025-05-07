@@ -1,7 +1,7 @@
 {
-    "name": "Canvas Next",
-    "description": "Automatically Next the Modules",
-    "version": "1.0",
+    "name": "Canvas Utilities",
+    "description": "Canvas Utilities",
+    "version": "0.0.2",
     "manifest_version": 3,
     "permissions": ["storage"],
     "action": {
