@@ -1,6 +1,6 @@
 console.log('skiptomodule.js working')
-chrome.storage.local.get([ 'skipToModules'], (result) => {
-    if(skipToModules){
+chrome.storage.local.get(['skipToModules'], (result) => {
+    if(result.skipToModules){
         console.log("skiptomodule.js working")
 
         const currentURL = window.location.href

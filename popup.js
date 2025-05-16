@@ -8,7 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     skipToModules_toggle.addEventListener('change', () => {
-        console.log('change fired')
         chrome.storage.local.set({ skipToModules: skipToModules_toggle.checked})
+        chrome.storage.local.get(['skipToModules'], (result) => {
+            console.log(result.skipToModules)
+        })
     })
 })
